@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from mainapp.views import MainView
+from mainapp.views import main_view
+from users.views import register, logout_view
 
 urlpatterns = [
-    path('', MainView.as_view()),
+    path('', main_view, name="main_view"),
     path('admin/', admin.site.urls),
+    path('register/', register, name='register'),
+    path('logout/', logout_view, name='logout')
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
