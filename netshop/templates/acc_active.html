@@ -1,0 +1,6 @@
+{% autoescape off %}  
+Assalomu aleylum {{ user.username }},  
+Iltimos ro'yxatdan o'tganingizni tasdiqlash uchun ushbu linkni bosing,
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}  
+Agar ushbu xabar sizga tegishli emas deb o'ylasangiz , xabarnbi rad eting.
+{% endautoescape %}
