@@ -22,8 +22,10 @@ def register(request):
     form_l = Login()
     if request.method == "POST":
         form_r = Register(request.POST)
+        print("Post post post")
         form_l = AuthenticationForm(request, request.POST)
         if form_r.is_valid():
+            print("valid valid")
             user = form_r.save(commit=False)
             user.is_active = False
             user.save()

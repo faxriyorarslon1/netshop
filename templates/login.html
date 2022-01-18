@@ -10,6 +10,11 @@
                     <h2>Login to your account</h2>
                     <form action="#" method="post">
                         {% csrf_token %}
+                        {% for field, errors in form_l.errors.items %}
+                            {% for error in errors %}
+                                <p style="color:orange;">{{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
                         {{ form_l.username }}
                         {{ form_l.password }}
                         <!-- <input type="text" placeholder="Name" />
@@ -30,14 +35,15 @@
                     <h2>New User Signup!</h2>
                     <form action="#" method="post">
                         {% csrf_token %}
+                        {% for field, errors in form_r.errors.items %}
+                            {% for error in errors %}
+                                <p style="color:orange;">{{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
                         {{ form_r.username }}
                         {{ form_r.email }}
                         {{ form_r.password1 }}
                         {{ form_r.password2}}
-                        <!-- <input type="text" placeholder="Name"/>
-                        <input type="email" placeholder="Email Address"/>
-                        <input type="password" placeholder="Password"/>
-                        <input type="password" placeholder="Password"/> -->
                         <button type="submit" class="btn btn-default">Signup</button>
                     </form>
                 </div><!--/sign up form-->

@@ -94,6 +94,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'netshop',
+#         'USER' : 'postgres',
+#         'PASSWORD' : 'root',
+#         'HOST' : '127.0.0.1',
+#         'PORT' : '5432',
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -153,7 +164,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
 MAILER_EMAIL_BACKEND = EMAIL_BACKEND  
 EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_HOST_PASSWORD = '2020Arslonov'  
+EMAIL_HOST_PASSWORD = 'Arslonov2020'  
 EMAIL_HOST_USER = 'faxriyorarslonov@gmail.com'  
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True  
