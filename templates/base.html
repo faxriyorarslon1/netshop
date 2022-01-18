@@ -33,8 +33,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +998 93 834 64 78</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> faxriyorarslonov@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -87,7 +87,7 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="{% url 'main_view' %}"><i class="fa fa-user"></i> Main</a></li>
+								<!-- <li><a href="{% url 'main_view' %}"><i class="fa fa-user"></i> Main</a></li> -->
 								<!-- <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
 								<li><a href="{% url 'cart_detail' %}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
@@ -117,13 +117,12 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="{% url 'main_view' %}" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="{% url 'shop_page' %}">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
+										<li><a href="{% url 'cart_detail' %}">Cart</a></li> 
 										<li><a href="{% url 'register' %}">Login</a></li> 
                                     </ul>
                                 </li> 
@@ -138,10 +137,19 @@
 							</ul>
 						</div>
 					</div>
+					<!-- <div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="search" placeholder="Search"/>
+						</div>
+					</div> -->
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
+							<form class="form-inline my-2 my-lg-0" action="{% url 'main_view' %}">
+								<input class="form-control mr-sm-2" type="search"   placeholder="Search" aria-label="Search" name="search">
+								<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+							</form>
 						</div>
+						
 					</div>
 				</div>
 			</div>

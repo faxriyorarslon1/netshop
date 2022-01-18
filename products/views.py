@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from .models import Product
 from django.contrib.auth.decorators import login_required
@@ -48,4 +49,8 @@ def cart_detail(request):
 
 
 def shop(request):
-    return render(request, 'shop.html')
+    products = Product.objects.all()
+    context={
+        "products":products
+    }
+    return render(request, 'shop.html', context=context)
